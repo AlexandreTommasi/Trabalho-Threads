@@ -163,29 +163,3 @@ Este é o ponto de entrada do programa que:
 Quando executado, este código deve demonstrar claramente o problema da race condition,
 onde o acesso concorrente à conta bancária resulta em um estado inconsistente do sistema.
 """
-
-"""
-Análise do Problema da Race Condition:
-
-O que observamos nesta demonstração é um clássico problema de concorrência conhecido como 'race condition':
-
-1. A conta bancária tem um saldo inicial de R$1000
-2. Cinco clientes tentam realizar saques simultaneamente
-3. Cada cliente verifica o saldo, vê que há recursos suficientes e inicia o processo de saque
-4. Durante o tempo de processamento, outras threads também 
-   verificam o saldo, mas ainda veem o valor original antes de qualquer atualização
-5. No final, o sistema permite saques totais superiores ao saldo disponível
-
-Este problema ocorre porque:
-- Não há mecanismo de sincronização entre as threads
-- A operação de verificação e atualização não é atômica
-- Existe um intervalo de tempo entre a verificação do saldo e sua atualização
-
-Em sistemas reais, este problema é resolvido com mecanismos de sincronização como:
-- Locks (mutex)
-- Semáforos
-- Transações atômicas
-- Estruturas de dados thread-safe
-
-Estes mecanismos garantem que apenas uma thread por vez possa executar seções críticas do código.
-"""
