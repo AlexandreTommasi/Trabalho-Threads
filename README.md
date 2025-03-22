@@ -15,7 +15,6 @@ Neste simulador:
 - **Threads**: Execução simultânea de múltiplos fluxos de código
 - **Race conditions**: Falhas devido a acessos concorrentes não sincronizados
 - **Seções críticas**: Partes do código que acessam recursos compartilhados
-- **Janela de vulnerabilidade**: Intervalo entre verificação e atualização de um valor
 
 ## 💡 Como Funciona
 A simulação cria uma conta bancária e múltiplos clientes que tentam sacar valores entre R$300 e R$500. O método de saque:
