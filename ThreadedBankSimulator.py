@@ -38,7 +38,7 @@ class ContaSemProtecao:
             # Leitura do saldo atual
             saldo_atual = self.saldo
             
-            # Atualização do saldo (sem lock, o valor pode ter sido modificado por outra thread)
+            # Atualização do saldo
             self.saldo = saldo_atual - valor
             self.total_sacado += valor
             
@@ -149,7 +149,7 @@ Qualquer uma dessas condições comprova a existência de uma race condition no 
 # Bloco 5: Código principal que inicia tudo
 # =============================================================================
 if __name__ == "__main__":
-    print("DEMONSTRAÇÃO DE SISTEMA BANCÁRIO COM SOBRECARGA (SEM LOCKS)\n")
+    print("DEMONSTRAÇÃO DE SISTEMA BANCÁRIO COM SOBRECARGA\n")
     demonstrar_sobrecarga()
 
 """
